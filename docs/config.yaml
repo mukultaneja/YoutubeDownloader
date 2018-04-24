@@ -1,0 +1,26 @@
+settings:
+  process: 2  # Number of deployed processes to download youtube videos
+download:
+  # official-ceogiri:
+  #   dirname: 'official-ceogiri'
+  #   videos:
+  #     - 'https://www.youtube.com/watch?v=tTqLFs0rT_Y'
+  #     - 'https://www.youtube.com/watch?v=gilMMH9oT9I'
+  #     - 'https://www.youtube.com/watch?v=NxvzisNwyQI'
+  #     - 'https://www.youtube.com/watch?v=dVa24pk9uHI'
+  #     - 'https://www.youtube.com/watch?v=B3yFBYKJMmg'
+  # lovethese:
+  #   dirname: '../videos/lovethese'
+  #   videos:
+  #     - 'https://www.youtube.com/watch?v=yQ2zARMyH68'
+  #     - 'https://www.youtube.com/watch?v=8VbTrOYU43A'
+  #     - 'https://www.youtube.com/watch?v=OPf0YbXqDm0'
+  # mostlyinsane:
+  #   dirname: '../videos/mostlyinsane'
+  #   videos:
+  #     - 'https://www.youtube.com/watch?v=vcKPjDUc5EQ'
+  trippling:
+    dirname: '../videos/trippling'
+    playlists:
+      - 'https://www.youtube.com/watch?list=PLTB0eCoUXEraZe3d7fJRdB-znE5D0cMZ7'
+      - 'https://www.youtube.com/watch?list=PLTB0eCoUXErZe2pMrH3qO4tHtw-K0QKb_'
