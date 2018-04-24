@@ -3,7 +3,7 @@
 History
 -------
 
-0.1 (23 Apr 2018)
+0.1.11 (25 Apr 2018)
 ~~~~~~~~~~~~~~~~~~
 Official Release date of ``ytdownloader`` python package.
 

@@ -13,7 +13,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/mukultaneja/ytdownloader/issues.
+Report bugs at https://github.com/mukultaneja/YoutubeDownloader/issues.
 
 If you are reporting a bug, please include:
 
@@ -43,7 +43,7 @@ articles, and such.
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://github.com/mukultaneja/ytdownloader/issues.
+The best way to send feedback is to file an issue at https://github.com/mukultaneja/YoutubeDownloader/issues.
 
 If you are proposing a feature:
 
@@ -58,15 +58,15 @@ Get Started!
 ``ytdownloader`` runs on 2.7+ and Python 3+ in any OS. To set up the development
 environment:
 
-1. Fork the `ytdownloader repo <https://github.com/mukultaneja/ytdownloader>`__
+1. Fork the `YoutubeDownloader repo <https://github.com/mukultaneja/YoutubeDownloader>`__
 2. Clone your fork locally::
 
-    git clone git@github.com:your_user_id/ytdownloader.git
+    git clone git@github.com:your_user_id/YoutubeDownloader.git
 
 3. Install your local copy into a virtualenv. If you have `virtualenvwrapper <http://virtualenvwrapper.readthedocs.org/en/latest/install.html>`__ installed, this is how you set up your fork for local development::
 
-    $ mkvirtualenv ytdownloader
-    $ cd ytdownloader/
+    $ mkvirtualenv YoutubeDownloader
+    $ cd YoutubeDownloader/
     $ python setup.py develop
 
 4. Create a branch for local development::

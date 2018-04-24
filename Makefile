@@ -40,7 +40,7 @@ clean-test:
 	rm -fr htmlcov/
 
 lint:
-	flake8 ytdownloader
+	flake8 YoutubeDownloader
 
 release: clean
 	$(PYTHON) setup.py sdist upload
