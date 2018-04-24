@@ -102,7 +102,7 @@ Before you submit a pull request, check that it meets these guidelines:
 Release
 -------
 
-1. Update ``__version__ = x.x.x`` in :mod:`ytdownloader`
+1. Update ``__VERSION__ = x.x.x`` in `ytdownloader <https://github.com/mukultaneja/YoutubeDownloader/blob/master/ytdownloader/__init__.py>`__
 
 2. Update ``HISTORY.rst`` with changes
 
