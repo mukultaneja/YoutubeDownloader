@@ -85,7 +85,7 @@ This is a pure-Python package built for Python 2.6+ and Python 3.0+. To set up:
     ytdownloader --help
 ```
 
-[reference]: https://github.com/mukultaneja/YoutubeDownloader/raw/master/ "YoutubeDownloader Reference"
+[reference]: https://github.com/mukultaneja/YoutubeDownloader/blob/master/docs/reference.png "YoutubeDownloader Reference"
 
 - `config` specifies the location for the configuration file to **YoutubeDownloader**. If it omits, **YoutubeDownloader** looks in the current directory for the configuration file.
 - `--version` specifies the currect version of **YoutubeDownloader**.
