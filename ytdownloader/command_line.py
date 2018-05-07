@@ -22,5 +22,4 @@ def main():
         return "YoutubeDownloader is an automated service to download videos from youtube"
 
     yt = YoutubeDownloader()
-    yt.read_config(args.config)
-    yt.start_download()
+    yt.start(args.config)
