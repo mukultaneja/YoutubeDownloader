@@ -7,7 +7,7 @@ import subprocess
 import multiprocessing
 
 logging.basicConfig(level=logging.DEBUG)
-__VERSION__ = '0.1.11'
+__VERSION__ = '0.1.12'
 
 
 class YoutubeDownloader(object):
