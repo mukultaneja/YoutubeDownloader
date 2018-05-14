@@ -10,7 +10,6 @@ Official Release date of ``ytdownloader`` python package.
 - Added proper handling of directory paths for ``ytdownloader`` package. 
 - Added support for downloading both videos, playlists for a directory (in earlier version it was either 
   videos or playlists).
-- Added support for downloading the whole playlist, an added video is part of. 
 
 0.1.11 (25 Apr 2018)
 ~~~~~~~~~~~~~~~~~~
