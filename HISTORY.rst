@@ -3,7 +3,7 @@
 History
 -------
 
-0.1.12
+0.1.13
 ~~~~~~~~~~~~~~~~~~
 Official Release date of ``ytdownloader`` python package.
 
