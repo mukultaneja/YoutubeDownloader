@@ -7,12 +7,39 @@ import subprocess
 import multiprocessing
 
 logging.basicConfig(level=logging.DEBUG)
-__VERSION__ = '0.1.12'
+__VERSION__ = '0.1.13'
+
+
+def download_items(item_to_download):
+    dirname, videos, playlists = item_to_download
+    dirname = os.path.abspath(os.path.expanduser(dirname))
+    videos = videos if type(videos) is list else [videos]
+    playlists = playlists if type(playlists) is list else [playlists]
+    items = videos + playlists
+    logger = logging.getLogger(__name__)
+
+    if not items:
+        logger.info(
+            ' {}: Finished downloading! Nothing to download.'.format(dirname))
+        return 0
+
+    if not os.path.exists(dirname):
+        os.makedirs(dirname)
+
+    os.chdir(dirname)
+    items = ' '.join(items)
+    logger.info(' Dumping videos into directory {}'.format(dirname))
+    subprocess.check_call('youtube-dl ' + items, shell=True)
+    logger.info(
+        ' Finished {} downloading! {} ready to consume.'.format(dirname, dirname))
+    os.chdir(os.getcwd())
+
+    return 0
 
 
 class YoutubeDownloader(object):
-    def __init__(self):
-        self.currentdir = os.getcwd()
+    def __init__(self, *args, **kwargs):
+        super(YoutubeDownloader, self).__init__(*args, **kwargs)
 
     def search_config(self):
         logger = logging.getLogger(__name__)
@@ -45,33 +72,10 @@ class YoutubeDownloader(object):
 
         return items_to_download
 
-    def download_items(self, item_to_download):
-        dirname, videos, playlists = item_to_download
-        dirname = os.path.abspath(os.path.expanduser(dirname))
-        videos = videos if type(videos) is list else [videos]
-        playlists = playlists if type(playlists) is list else [playlists]
-        items = videos + playlists
-        logger = logging.getLogger(__name__)
-
-        if not items:
-            logger.info(' {}: Finished downloading! Nothing to download.'.format(dirname))
-            return 0
-
-        if not os.path.exists(dirname):
-            os.makedirs(dirname)
-
-        os.chdir(dirname)
-        items = ' '.join(items)
-        logger.info(' Dumping videos into directory {}'.format(dirname))
-        subprocess.check_call('youtube-dl ' + items, shell=True)
-        logger.info(' Finished {} downloading! {} ready to consume.'.format(dirname, dirname))
-        os.chdir(self.currentdir)
-
-        return 0
-
     def start(self, config_file=None):
         logger = logging.getLogger(__name__)
-        config_file = os.path.abspath(config_file) if config_file else self.search_config()
+        config_file = os.path.abspath(os.path.expanduser(
+            config_file)) if config_file else self.search_config()
         logger.info(' Found configuration {}'.format(config_file))
         config = self.read_config(config_file)
         processes = config.get('settings').get('process', 1)
@@ -81,9 +85,10 @@ class YoutubeDownloader(object):
             logger.info(' Nothing to download! Finished downloading!')
             return 0
 
-        logger.info(' Starting YoutubeDownloader with {} workers.'.format(processes))
+        logger.info(
+            ' Starting YoutubeDownloader with {} workers.'.format(processes))
         pool = multiprocessing.Pool(processes)
-        results = pool.map_async(self.download_items, items_to_download)
+        results = pool.map_async(download_items, items_to_download)
         results.wait()
 
         return results
@@ -91,4 +96,4 @@ class YoutubeDownloader(object):
 
 if __name__ == '__main__':
     yt = YoutubeDownloader()
-    yt.start('../docs/config.json')
+    yt.start('~/ytconfig.yaml')

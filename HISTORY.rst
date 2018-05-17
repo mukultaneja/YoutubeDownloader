@@ -3,7 +3,13 @@
 History
 -------
 
-0.1.12 (WIP)
+0.1.12
+~~~~~~~~~~~~~~~~~~
+Official Release date of ``ytdownloader`` python package.
+
+- Added support for python 2.7. Resolved issue for pickling class methods raised from multiprocessing library.
+
+0.1.12
 ~~~~~~~~~~~~~~~~~~
 Official Release date of ``ytdownloader`` python package.
 
