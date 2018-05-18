@@ -7,7 +7,7 @@ import subprocess
 import multiprocessing
 
 logging.basicConfig(level=logging.DEBUG)
-__VERSION__ = '0.1.13'
+__VERSION__ = '0.1.14'
 
 
 def download_items(item_to_download):
@@ -44,8 +44,9 @@ class YoutubeDownloader(object):
     def search_config(self):
         logger = logging.getLogger(__name__)
         logger.info(' Looking for configuration...')
-        yaml_path = os.path.join(self.currentdir, '*.yaml')
-        json_path = os.path.join(self.currentdir, '*.json')
+        currentdir = os.getcwd()
+        yaml_path = os.path.join(currentdir, '*.yaml')
+        json_path = os.path.join(currentdir, '*.json')
         config_file = glob.glob(yaml_path) or glob.glob(json_path)
 
         if len(config_file) > 0:
